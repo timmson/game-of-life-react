@@ -25,8 +25,8 @@ export const dieOrLive = (value: number, countOfNeighbours: number) => {
 export const countNeighbours = (board: number[][], x: number, y: number): number => {
 	let neighbours = 0
 
-	Array(x - 1, x, x + 1).forEach((i) =>
-		Array(y - 1, y, y + 1).forEach((j) => {
+	sequence(x, board.length).forEach((i) =>
+		sequence(y, board[i].length).forEach((j) => {
 			try {
 				neighbours += (x === i && y === j) ? 0 : (board[i][j] ? board[i][j] : 0)
 			} catch (ignore) {
@@ -37,6 +37,10 @@ export const countNeighbours = (board: number[][], x: number, y: number): number
 
 	return neighbours
 }
-export const extract = <T extends any>(array: T[], index: number) =>
-	array.slice(Math.max(0, index - 1), Math.min(index + 1, array.length - 1) + 1)
+
+export const sequence = (index: number, length: number) => {
+	const start = Math.max(0, index - 1)
+	const end = Math.min(index + 1, length - 1) + 1
+	return Array.from({length: (end - start)}, (v, k) => k + start)
+}
 
