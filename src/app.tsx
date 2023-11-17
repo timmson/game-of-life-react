@@ -1,9 +1,9 @@
 import React, {useState} from "react"
-import {Board} from "./Board"
+import {Board} from "./board"
 
 function App() {
 
-	const initBoard = (size: number) => Array.from(Array(size)).map((i) => Array.from(Array(size)).map((j) => Math.round(Math.random())))
+	const initBoard = (size: number) => Array.from(Array(size)).map(() => Array.from(Array(size)).map(() => Math.round(Math.random())))
 
 	const [state, setState] = useState({board: initBoard(10)})
 
@@ -16,7 +16,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1 className="2xl:text-4xl md:text-4xl font-bold">
+			<h1 className="2xl:text-4xl md:text-4xl font-bold text-center">
 				Game of Life
 			</h1>
 			<div className="flex flex-row justify-center mt-5">
@@ -24,7 +24,7 @@ function App() {
 					{
 						state.board.map((row, i) =>
 							row.map((cell, j) =>
-								<div key={i + j} className="border border-gray-300 p-2">{cell === 1 ? "🔴" : "⚪"}</div>
+								<div key={i + j} className="border border-gray-300 p-2">{cell === 1 ? "🔴" : "⚫️"}</div>
 							)
 						)
 					}
