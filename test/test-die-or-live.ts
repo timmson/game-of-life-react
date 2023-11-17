@@ -1,4 +1,4 @@
-import {dieOrLive} from "../src/functions"
+import {dieOrLive} from "../src/board"
 
 describe("DieOrLive should", () => {
 

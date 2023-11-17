@@ -36,7 +36,7 @@
   },
   "scripts": {
     "lint": "npx eslint ./src ./test --fix",
-    "test": "npx jest",
+    "test": "npx jest --verbose",
     "coverage": "npx jest --collectCoverage",
     "watch": "npx webpack --mode development --watch",
     "dev": "npx webpack --mode development",

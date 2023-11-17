@@ -1,4 +1,4 @@
-import {Board} from "../src/board"
+import {tick} from "../src/board"
 
 describe("Board should", () => {
 
@@ -9,7 +9,7 @@ describe("Board should", () => {
 			[0, 1, 1],
 		]
 
-		const result = new Board(arrange).tick().getBoard()
+		const result = tick(arrange)
 
 		expect(result).toEqual([
 			[0, 1, 1],

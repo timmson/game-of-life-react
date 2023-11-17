@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Board} from "./board"
+import {tick} from "./board"
 
 function App() {
 
@@ -7,8 +7,8 @@ function App() {
 
 	const [state, setState] = useState({board: initBoard(10)})
 
-	const tick = () => {
-		const newBoard = new Board(state.board).tick().getBoard()
+	const tick1 = () => {
+		const newBoard = tick(state.board)
 		setState({...state, board: newBoard})
 	}
 
@@ -32,7 +32,7 @@ function App() {
 			</div>
 			<div className="flex flex-row justify-center mt-5">
 				<button className="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-2 px-4 rounded"
-					onClick={() => tick()}>
+					onClick={() => tick1()}>
 					Step
 				</button>
 				<button

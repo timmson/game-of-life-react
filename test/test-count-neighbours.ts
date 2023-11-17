@@ -1,4 +1,4 @@
-import {countNeighbours} from "../src/functions"
+import {countNeighbours} from "../src/board"
 
 describe("Count should", () => {
 
