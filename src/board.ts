@@ -22,16 +22,13 @@ export const dieOrLive = (value: number, countOfNeighbours: number) => {
 		return 0
 	}
 }
+
 export const countNeighbours = (board: number[][], x: number, y: number): number => {
 	let neighbours = 0
 
 	sequence(x, board.length).forEach((i) =>
 		sequence(y, board[i].length).forEach((j) => {
-			try {
-				neighbours += (x === i && y === j) ? 0 : (board[i][j] ? board[i][j] : 0)
-			} catch (ignore) {
-
-			}
+			neighbours += (x === i && y === j) ? 0 : board[i][j]
 		})
 	)
 
