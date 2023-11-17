@@ -1,4 +1,4 @@
-import {Board} from "../src/board"
+import {Board, countNeighbours} from "../src/board"
 
 describe("Board should", () => {
 
@@ -9,7 +9,7 @@ describe("Board should", () => {
 			[0, 0, 0],
 		]
 
-		const result = new Board(arrange).countNeighbours(1, 1)
+		const result = countNeighbours(arrange, 1, 1)
 
 		expect(result).toEqual(0)
 	})
@@ -21,7 +21,7 @@ describe("Board should", () => {
 			[0, 0, 0],
 		]
 
-		const result = new Board(arrange).countNeighbours(1, 1)
+		const result = countNeighbours(arrange, 1, 1)
 
 		expect(result).toEqual(1)
 	})
@@ -33,7 +33,7 @@ describe("Board should", () => {
 			[0, 0, 0],
 		]
 
-		const result = new Board(arrange).countNeighbours(0, 0)
+		const result = countNeighbours(arrange, 0, 0)
 
 		expect(result).toEqual(3)
 	})
@@ -45,7 +45,7 @@ describe("Board should", () => {
 			[0, 1, 1],
 		]
 
-		const result = new Board(arrange).countNeighbours(1, 2)
+		const result = countNeighbours(arrange, 1, 2)
 
 		expect(result).toEqual(5)
 	})
